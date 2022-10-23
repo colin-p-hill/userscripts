@@ -59,7 +59,7 @@ function insertLink(elements) {
 
       link.href = `https://fallenlondon.wiki/wiki/${encodeLink(name)}`;
       link.style.color = "#282520";
-      link.innerText = header.innerHTML;
+      link.innerHTML = header.innerHTML;
 
       header.replaceChildren(link);
     });
