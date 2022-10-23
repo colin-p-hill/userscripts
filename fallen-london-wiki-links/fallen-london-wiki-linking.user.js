@@ -60,6 +60,10 @@ function insertLink(elements) {
       link.href = `https://fallenlondon.wiki/wiki/${encodeLink(name)}`;
       link.style.color = "#282520";
       link.replaceChildren(...header.childNodes);
+      // Open in new tab to prevent losing page state
+      link.target = "_blank";
+      // See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#security_and_privacy
+      link.rel = "noopener noreferrer";
 
       header.replaceChildren(link);
     });
