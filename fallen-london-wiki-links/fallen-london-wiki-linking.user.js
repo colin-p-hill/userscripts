@@ -103,7 +103,9 @@ function onChangeObserved(changes) {
   changes.forEach((change) => {
     // Node added
     if(change.type === "childList" && change.addedNodes.length > 0) {
-      if( change.target.classList.contains("router-example") || change.target.classList.contains("tab-content__bordered-container")) {
+      if(change.target.id === "root"
+         || change.target.classList.contains("router-example")
+         || change.target.classList.contains("tab-content__bordered-container")) {
         // storylet parent has been updated; try to look for Storylet elements
         linkStorylets(change.addedNodes[0]);
       }
